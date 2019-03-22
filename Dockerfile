@@ -1,6 +1,8 @@
 FROM nikgatto/my-dockerized-debian-base:latest
 
-ENV NODE_VERSION=10.15.3
+ENV NODE_VERSION=10.15.3 \
+	IMAGE_NAME=nikgatto/my-dockerized-debian \
+	IMAGE_REPO=https://github.com/niktekusho/my-dockerized-debian
 
 # Install nvm in the default user "user"
 RUN wget -qO- https://raw.githubusercontent.com/creationix/nvm/v0.34.0/install.sh | bash
