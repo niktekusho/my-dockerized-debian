@@ -1,0 +1,16 @@
+language: minimal
+
+services:
+  - docker
+
+install:
+  - docker build -t test .
+
+script:
+  - docker run --rm test -h
+
+deploy:
+  provider: script
+  script: bash docker_push.sh
+  on:
+    branch: master
